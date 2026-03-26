@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div className=' bg-red-300'>
-      App
+    <div className=' container mx-auto'>
+      <Home />
     </div>
   );
 };
