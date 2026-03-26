@@ -1,9 +1,11 @@
 import React from 'react';
+import Playlers from '../components/Playlers';
 
-const Allplayers = () => {
+const Allplayers = ({ playlers }) => {
     return (
         <div>
             Allplayers
+            <Playlers playlers={playlers} />
         </div>
     );
 };
