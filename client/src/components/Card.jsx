@@ -1,19 +1,38 @@
 import React from 'react';
+import { Flag, User } from 'lucide-react'
 
-const Card = ({ player }) => {
+const Card = ({ playler }) => {
+    console.log(playler)
     return (
-        <div>
-            <div className="card bg-base-100 shadow-sm">
+        <div >
+            <div className="card bg-base-100 shadow-sm space-y-2 p-2">
                 <figure>
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
+                        src={playler.playerImg}
+                        alt={playler.playerName} />
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">Card Title</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                <div className=' flex gap-2'>
+                    <User />
+                    <h2>{playler.playerName}</h2>
+                </div>
+                <div >
+                    <div className=' flex justify-between items-center'>
+                        <div className=' flex gap-3'>
+                            <Flag />
+                            <p>{playler.playerCountry}</p>
+                        </div>
+                        <div className=' p-2 bg-gray-200'>{playler.playerType}</div>
+                    </div>
+                </div>
+                <div className=' space-y-2' >
+                    <h3>rating {playler.rating}</h3>
+                    <div className=' flex items-center justify-between'>
+                        <p>{playler.battingStyle}</p>
+                        <p>{playler.bowlingStyle}</p>
+                    </div>
+                    <div className=' flex items-center justify-between'>
+                        <p>price:{playler.price}</p>
+                        <button className=' btn btn-ghost  p-2 bg-gray-200'>Choose Player</button>
                     </div>
                 </div>
             </div>
